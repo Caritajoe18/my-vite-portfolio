@@ -55,8 +55,8 @@ const PortfolioHeader = () => {
         <motion.div 
           className={`rounded-2xl px-6 py-3 transition-all duration-300 ${
             scrolled 
-              ? 'bg-background/80 backdrop-blur-xl border border-border shadow-lg' 
-              : 'bg-transparent'
+              ? 'bg-background/90 backdrop-blur-xl border border-border shadow-lg' 
+              : 'bg-background/50 backdrop-blur-sm'
           }`}
           initial={{ y: -100 }}
           animate={{ y: 0 }}

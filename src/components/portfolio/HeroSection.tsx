@@ -4,28 +4,28 @@ import { Button } from '@/components/ui/button';
 
 const HeroSection = () => {
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-24 pb-16">
+    <section className="min-h-screen flex items-center justify-center relative overflow-hidden pt-24 pb-16 bg-background">
       {/* Animated background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-primary/5" />
+      <div className="absolute inset-0 bg-gradient-to-br from-background via-primary/5 to-accent/5" />
       
       {/* Floating code elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <motion.div
-          className="absolute top-20 left-10 text-primary/10 font-mono text-6xl"
+          className="absolute top-20 left-10 text-primary/20 font-mono text-6xl"
           animate={{ y: [0, -20, 0], rotate: [0, 5, 0] }}
           transition={{ duration: 6, repeat: Infinity }}
         >
           {'</>'}
         </motion.div>
         <motion.div
-          className="absolute bottom-32 right-20 text-accent/10 font-mono text-5xl"
+          className="absolute bottom-32 right-20 text-accent/20 font-mono text-5xl"
           animate={{ y: [0, 20, 0], rotate: [0, -5, 0] }}
           transition={{ duration: 5, repeat: Infinity, delay: 1 }}
         >
           {'{ }'}
         </motion.div>
         <motion.div
-          className="absolute top-1/3 right-1/4 text-secondary/20 font-mono text-4xl"
+          className="absolute top-1/3 right-1/4 text-primary/15 font-mono text-4xl"
           animate={{ y: [0, -15, 0] }}
           transition={{ duration: 4, repeat: Infinity, delay: 0.5 }}
         >
