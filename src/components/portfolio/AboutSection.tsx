@@ -51,46 +51,46 @@ const AboutSection = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              I'm a full-stack developer with a passion for building robust, scalable applications. 
-              My expertise spans from backend systems with <span className="text-primary font-semibold">Node.js</span>, 
-              <span className="text-primary font-semibold"> TypeScript</span>, and 
-              <span className="text-primary font-semibold"> FastAPI</span> to modern frontends with 
+              Iam a Software Developer developer with a passion for building robust, scalable applications.
+              My expertise spans from backend systems with <span className="text-primary font-semibold">Node.js</span>,
+              <span className="text-primary font-semibold"> TypeScript</span>, and
+              <span className="text-primary font-semibold"> FastAPI</span> to modern frontends with
               <span className="text-primary font-semibold"> React</span>.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              Beyond traditional web development, I venture into the 
-              <span className="text-accent font-semibold"> Web3 space</span>, building smart contracts 
-              and decentralized applications using Solidity and Rust. This unique combination allows 
+              Beyond traditional web development, I venture into the
+              <span className="text-accent font-semibold"> Web3 space</span>, building smart contracts
+              and decentralized applications using Solidity and Rust. This unique combination allows
               me to bridge conventional systems with blockchain technology.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-              My portfolio includes diverse projects: church management platforms, event systems, 
-              SMS wallet integrations, supplier/customer ledger systems, batch-aware product sales, 
-              image analysis APIs, and secure role-based applications. I approach each project with 
+              My portfolio includes diverse projects: church management platforms, event systems,
+              SMS wallet integrations, supplier/customer ledger systems, batch-aware product sales,
+              image analysis APIs, and secure role-based applications. I approach each project with
               a focus on clean architecture, performance, and maintainability.
             </p>
 
             {/* Stats */}
             <div className="grid grid-cols-3 gap-6">
-              <motion.div 
+              <motion.div
                 whileHover={{ scale: 1.05, y: -5 }}
                 className="text-center p-4 rounded-xl bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/30 shadow-lg shadow-primary/10"
               >
-                <div className="text-3xl font-bold text-primary">5+</div>
+                <div className="text-3xl font-bold text-primary">{import.meta.env.VITE_YEARS_EXPERIENCE || '5+'}</div>
                 <div className="text-sm text-muted-foreground font-medium">Years Experience</div>
               </motion.div>
-              <motion.div 
+              <motion.div
                 whileHover={{ scale: 1.05, y: -5 }}
                 className="text-center p-4 rounded-xl bg-gradient-to-br from-accent/10 to-accent/5 border border-accent/30 shadow-lg shadow-accent/10"
               >
-                <div className="text-3xl font-bold text-accent">20+</div>
+                <div className="text-3xl font-bold text-accent">{import.meta.env.VITE_PROJECTS_COMPLETED || '20+'}</div>
                 <div className="text-sm text-muted-foreground font-medium">Projects Built</div>
               </motion.div>
-              <motion.div 
+              <motion.div
                 whileHover={{ scale: 1.05, y: -5 }}
                 className="text-center p-4 rounded-xl bg-gradient-to-br from-primary/10 to-accent/5 border border-primary/30 shadow-lg shadow-primary/10"
               >
-                <div className="text-3xl font-bold text-primary">10+</div>
+                <div className="text-3xl font-bold text-primary">{import.meta.env.VITE_HAPPY_CLIENTS || '10+'}</div>
                 <div className="text-sm text-muted-foreground font-medium">Happy Clients</div>
               </motion.div>
             </div>

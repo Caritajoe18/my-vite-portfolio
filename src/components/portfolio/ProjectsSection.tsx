@@ -105,9 +105,9 @@ const ProjectsSection = () => {
                   </div>
                   <div className="flex gap-2">
                     {project.links.github && (
-                      <a 
-                        href={project.links.github} 
-                        target="_blank" 
+                      <a
+                        href={project.links.github}
+                        target="_blank"
                         rel="noopener noreferrer"
                         className="p-2 rounded-lg hover:bg-muted transition-colors"
                       >
@@ -115,9 +115,9 @@ const ProjectsSection = () => {
                       </a>
                     )}
                     {project.links.live && (
-                      <a 
-                        href={project.links.live} 
-                        target="_blank" 
+                      <a
+                        href={project.links.live}
+                        target="_blank"
                         rel="noopener noreferrer"
                         className="p-2 rounded-lg hover:bg-muted transition-colors"
                       >
@@ -140,7 +140,7 @@ const ProjectsSection = () => {
                   {project.tech.map((tech) => (
                     <span
                       key={tech}
-                      className="px-2.5 py-1 text-xs font-medium rounded-md bg-muted text-muted-foreground"
+                      className="px-2.5 py-1 text-sm font-medium rounded-md bg-muted text-muted-foreground"
                     >
                       {tech}
                     </span>

@@ -12,7 +12,7 @@ import ContactSection from '@/components/portfolio/ContactSection';
 
 const Index = () => {
   useEffect(() => {
-    document.title = "Full-Stack Developer & Web3 Engineer | Portfolio";
+    document.title = "Software Developer & Web3 Engineer | Portfolio";
   }, []);
 
   return (

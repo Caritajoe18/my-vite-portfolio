@@ -19,15 +19,15 @@ const ContactSection = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
+
     // Simulate form submission
     await new Promise(resolve => setTimeout(resolve, 1000));
-    
+
     toast({
       title: "Message sent!",
       description: "Thank you for reaching out. I'll get back to you soon.",
     });
-    
+
     setFormData({ name: '', email: '', subject: '', message: '' });
     setIsSubmitting(false);
   };
@@ -51,7 +51,7 @@ const ContactSection = () => {
             Let's Work Together
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Have a project in mind? I'd love to hear about it. Send me a message and let's create something amazing together.
+            Have a project in mind? I would love to hear about it. Send me a message and let's create something amazing together.
           </p>
           <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full mt-6" />
         </motion.div>
@@ -72,8 +72,8 @@ const ContactSection = () => {
               </div>
               <div>
                 <h3 className="font-semibold text-foreground mb-1">Email</h3>
-                <a href="mailto:your.email@example.com" className="text-muted-foreground hover:text-primary transition-colors">
-                  your.email@example.com
+                <a  href={`mailto:${import.meta.env.VITE_EMAIL}`} className="text-muted-foreground hover:text-primary transition-colors">
+                  caritaemelie@gmail.com
                 </a>
               </div>
             </div>
@@ -104,30 +104,30 @@ const ContactSection = () => {
             <div className="pt-6 border-t border-border">
               <h3 className="font-semibold text-foreground mb-4">Connect with me</h3>
               <div className="flex gap-4">
-                <a 
-                  href="https://github.com" 
-                  target="_blank" 
+                <a
+                  href={import.meta.env.VITE_GITHUB_URL}
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="p-3 rounded-xl bg-background border border-border hover:border-primary hover:bg-primary/10 transition-all duration-300"
                 >
                   <Github className="h-5 w-5 text-muted-foreground hover:text-primary" />
                 </a>
-                <a 
-                  href="https://linkedin.com" 
-                  target="_blank" 
+                <a
+                  href={import.meta.env.VITE_LINKEDIN_URL}
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="p-3 rounded-xl bg-background border border-border hover:border-primary hover:bg-primary/10 transition-all duration-300"
                 >
                   <Linkedin className="h-5 w-5 text-muted-foreground hover:text-primary" />
                 </a>
-                <a 
-                  href="https://medium.com/@yourusername" 
-                  target="_blank" 
+                <a
+                  href={import.meta.env.VITE_MEDIUM_URL}
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="p-3 rounded-xl bg-background border border-border hover:border-primary hover:bg-primary/10 transition-all duration-300"
                 >
                   <svg className="h-5 w-5 text-muted-foreground hover:text-primary" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/>
+                    <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z" />
                   </svg>
                 </a>
               </div>
@@ -206,9 +206,9 @@ const ContactSection = () => {
                 />
               </div>
 
-              <Button 
-                type="submit" 
-                size="lg" 
+              <Button
+                type="submit"
+                size="lg"
                 className="w-full"
                 disabled={isSubmitting}
               >

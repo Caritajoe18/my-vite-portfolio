@@ -74,7 +74,7 @@ const ExperienceSection = () => {
             <div className="relative">
               {/* Timeline line */}
               <div className="absolute left-4 top-0 bottom-0 w-0.5 bg-border" />
-              
+
               {experiences.map((exp, index) => (
                 <motion.div
                   key={exp.title + exp.company}
@@ -86,17 +86,17 @@ const ExperienceSection = () => {
                 >
                   {/* Timeline dot */}
                   <div className="absolute left-2 top-1 w-5 h-5 rounded-full bg-primary border-4 border-background" />
-                  
+
                   <div className="p-6 rounded-2xl bg-background border border-border hover:border-primary/30 transition-all duration-300">
                     <div className="flex flex-wrap items-center justify-between gap-2 mb-2">
                       <h4 className="text-lg font-bold text-foreground">{exp.title}</h4>
                       <span className="text-sm text-muted-foreground font-mono">{exp.period}</span>
                     </div>
                     <p className="text-primary font-medium mb-3">{exp.company}</p>
-                    <p className="text-muted-foreground text-sm mb-4">{exp.description}</p>
+                    <p className="text-muted-foreground text-base mb-4">{exp.description}</p>
                     <ul className="space-y-1">
                       {exp.highlights.map((highlight) => (
-                        <li key={highlight} className="text-sm text-muted-foreground flex items-center gap-2">
+                        <li key={highlight} className="text-base text-muted-foreground flex items-center gap-2">
                           <span className="w-1.5 h-1.5 rounded-full bg-primary" />
                           {highlight}
                         </li>
