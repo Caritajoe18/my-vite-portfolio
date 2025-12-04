@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Code2, Server, Blocks, Lightbulb } from 'lucide-react';
+import { Code2, Server, Blocks, Lightbulb, User } from 'lucide-react';
 
 const highlights = [
   {
@@ -26,7 +26,7 @@ const highlights = [
 
 const AboutSection = () => {
   return (
-    <section id="about" className="py-24 bg-card/50">
+    <section id="about" className="py-24 bg-gradient-to-b from-background to-card/30">
       <div className="max-w-6xl mx-auto px-4">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -35,11 +35,65 @@ const AboutSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-primary font-mono text-sm tracking-wider uppercase">About Me</span>
+          <span className="text-primary font-mono text-sm tracking-wider uppercase font-semibold">About Me</span>
           <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 text-foreground">
             Crafting Digital Solutions
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full" />
+          <div className="w-24 h-1.5 bg-gradient-to-r from-primary via-accent to-primary mx-auto rounded-full" />
+        </motion.div>
+
+        {/* Profile Image Section */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="flex justify-center mb-16"
+        >
+          <div className="relative">
+            {/* Animated background rings */}
+            <motion.div
+              animate={{ rotate: 360 }}
+              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+              className="absolute inset-0 w-64 h-64 md:w-72 md:h-72 rounded-full border-2 border-dashed border-primary/40"
+              style={{ margin: '-16px' }}
+            />
+            <motion.div
+              animate={{ rotate: -360 }}
+              transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+              className="absolute inset-0 w-56 h-56 md:w-64 md:h-64 rounded-full border-2 border-dashed border-accent/40"
+              style={{ margin: '-8px' }}
+            />
+            
+            {/* Glowing background */}
+            <div className="absolute inset-0 w-48 h-48 md:w-56 md:h-56 rounded-full bg-gradient-to-br from-primary/30 via-accent/20 to-primary/30 blur-2xl" />
+            
+            {/* Image container */}
+            <div className="relative w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-primary/60 shadow-2xl shadow-primary/30 bg-gradient-to-br from-primary/20 to-accent/20">
+              {/* Placeholder - replace src with your image */}
+              <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-card to-background">
+                <User className="w-24 h-24 md:w-28 md:h-28 text-primary/60" />
+              </div>
+              {/* Uncomment and update src when you have your image */}
+              {/* <img 
+                src="/your-profile-image.jpg" 
+                alt="Profile"
+                className="w-full h-full object-cover"
+              /> */}
+            </div>
+
+            {/* Floating accent dots */}
+            <motion.div
+              animate={{ y: [-5, 5, -5] }}
+              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-primary shadow-lg shadow-primary/50"
+            />
+            <motion.div
+              animate={{ y: [5, -5, 5] }}
+              transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
+              className="absolute -bottom-2 -left-2 w-4 h-4 rounded-full bg-accent shadow-lg shadow-accent/50"
+            />
+          </div>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
@@ -52,14 +106,14 @@ const AboutSection = () => {
           >
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
               I'm a full-stack developer with a passion for building robust, scalable applications. 
-              My expertise spans from backend systems with <span className="text-primary font-medium">Node.js</span>, 
-              <span className="text-primary font-medium"> TypeScript</span>, and 
-              <span className="text-primary font-medium"> FastAPI</span> to modern frontends with 
-              <span className="text-primary font-medium"> React</span>.
+              My expertise spans from backend systems with <span className="text-primary font-semibold">Node.js</span>, 
+              <span className="text-primary font-semibold"> TypeScript</span>, and 
+              <span className="text-primary font-semibold"> FastAPI</span> to modern frontends with 
+              <span className="text-primary font-semibold"> React</span>.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
               Beyond traditional web development, I venture into the 
-              <span className="text-accent font-medium"> Web3 space</span>, building smart contracts 
+              <span className="text-accent font-semibold"> Web3 space</span>, building smart contracts 
               and decentralized applications using Solidity and Rust. This unique combination allows 
               me to bridge conventional systems with blockchain technology.
             </p>
@@ -72,18 +126,27 @@ const AboutSection = () => {
 
             {/* Stats */}
             <div className="grid grid-cols-3 gap-6">
-              <div className="text-center p-4 rounded-xl bg-background border border-border">
+              <motion.div 
+                whileHover={{ scale: 1.05, y: -5 }}
+                className="text-center p-4 rounded-xl bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/30 shadow-lg shadow-primary/10"
+              >
                 <div className="text-3xl font-bold text-primary">5+</div>
-                <div className="text-sm text-muted-foreground">Years Experience</div>
-              </div>
-              <div className="text-center p-4 rounded-xl bg-background border border-border">
-                <div className="text-3xl font-bold text-primary">20+</div>
-                <div className="text-sm text-muted-foreground">Projects Built</div>
-              </div>
-              <div className="text-center p-4 rounded-xl bg-background border border-border">
+                <div className="text-sm text-muted-foreground font-medium">Years Experience</div>
+              </motion.div>
+              <motion.div 
+                whileHover={{ scale: 1.05, y: -5 }}
+                className="text-center p-4 rounded-xl bg-gradient-to-br from-accent/10 to-accent/5 border border-accent/30 shadow-lg shadow-accent/10"
+              >
+                <div className="text-3xl font-bold text-accent">20+</div>
+                <div className="text-sm text-muted-foreground font-medium">Projects Built</div>
+              </motion.div>
+              <motion.div 
+                whileHover={{ scale: 1.05, y: -5 }}
+                className="text-center p-4 rounded-xl bg-gradient-to-br from-primary/10 to-accent/5 border border-primary/30 shadow-lg shadow-primary/10"
+              >
                 <div className="text-3xl font-bold text-primary">10+</div>
-                <div className="text-sm text-muted-foreground">Happy Clients</div>
-              </div>
+                <div className="text-sm text-muted-foreground font-medium">Happy Clients</div>
+              </motion.div>
             </div>
           </motion.div>
 
@@ -102,9 +165,10 @@ const AboutSection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: 0.1 * index }}
-                className="p-6 rounded-2xl bg-background border border-border hover:border-primary/50 hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 group"
+                whileHover={{ scale: 1.03, y: -5 }}
+                className="p-6 rounded-2xl bg-gradient-to-br from-background to-card border border-border hover:border-primary/50 shadow-lg hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 group"
               >
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-primary/20 to-accent/20 flex items-center justify-center mb-4 group-hover:from-primary/30 group-hover:to-accent/30 transition-all shadow-md shadow-primary/20">
                   <item.icon className="h-6 w-6 text-primary" />
                 </div>
                 <h3 className="font-semibold text-foreground mb-2">{item.title}</h3>
