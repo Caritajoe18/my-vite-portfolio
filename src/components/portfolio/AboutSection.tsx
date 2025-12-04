@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Code2, Server, Blocks, Lightbulb, User } from 'lucide-react';
+import { Code2, Server, Blocks, Lightbulb } from 'lucide-react';
 
 const highlights = [
   {
@@ -40,60 +40,6 @@ const AboutSection = () => {
             Crafting Digital Solutions
           </h2>
           <div className="w-24 h-1.5 bg-gradient-to-r from-primary via-accent to-primary mx-auto rounded-full" />
-        </motion.div>
-
-        {/* Profile Image Section */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="flex justify-center mb-16"
-        >
-          <div className="relative">
-            {/* Animated background rings */}
-            <motion.div
-              animate={{ rotate: 360 }}
-              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-              className="absolute inset-0 w-64 h-64 md:w-72 md:h-72 rounded-full border-2 border-dashed border-primary/40"
-              style={{ margin: '-16px' }}
-            />
-            <motion.div
-              animate={{ rotate: -360 }}
-              transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-              className="absolute inset-0 w-56 h-56 md:w-64 md:h-64 rounded-full border-2 border-dashed border-accent/40"
-              style={{ margin: '-8px' }}
-            />
-            
-            {/* Glowing background */}
-            <div className="absolute inset-0 w-48 h-48 md:w-56 md:h-56 rounded-full bg-gradient-to-br from-primary/30 via-accent/20 to-primary/30 blur-2xl" />
-            
-            {/* Image container */}
-            <div className="relative w-48 h-48 md:w-56 md:h-56 rounded-full overflow-hidden border-4 border-primary/60 shadow-2xl shadow-primary/30 bg-gradient-to-br from-primary/20 to-accent/20">
-              {/* Placeholder - replace src with your image */}
-              <div className="w-full h-full flex items-center justify-center bg-gradient-to-br from-card to-background">
-                <User className="w-24 h-24 md:w-28 md:h-28 text-primary/60" />
-              </div>
-              {/* Uncomment and update src when you have your image */}
-              {/* <img 
-                src="/your-profile-image.jpg" 
-                alt="Profile"
-                className="w-full h-full object-cover"
-              /> */}
-            </div>
-
-            {/* Floating accent dots */}
-            <motion.div
-              animate={{ y: [-5, 5, -5] }}
-              transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -top-2 -right-2 w-6 h-6 rounded-full bg-primary shadow-lg shadow-primary/50"
-            />
-            <motion.div
-              animate={{ y: [5, -5, 5] }}
-              transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -bottom-2 -left-2 w-4 h-4 rounded-full bg-accent shadow-lg shadow-accent/50"
-            />
-          </div>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
