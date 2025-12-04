@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Download, Mail, Github, Linkedin } from 'lucide-react';
+import { Download, Mail, Github, Linkedin, User } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const HeroSection = () => {
@@ -39,6 +39,22 @@ const HeroSection = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
+          {/* Profile Image */}
+          <div className="flex justify-center mb-8">
+            <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-primary/50 shadow-xl shadow-primary/20 bg-gradient-to-br from-card to-background">
+              {/* Placeholder - replace src with your image */}
+              <div className="w-full h-full flex items-center justify-center">
+                <User className="w-16 h-16 md:w-20 md:h-20 text-primary/60" />
+              </div>
+              {/* Uncomment and update src when you have your image */}
+              {/* <img 
+                src="/your-profile-image.jpg" 
+                alt="Profile"
+                className="w-full h-full object-cover"
+              /> */}
+            </div>
+          </div>
+
           {/* Status badge */}
           <motion.div 
             className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 mb-8"
