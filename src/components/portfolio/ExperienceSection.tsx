@@ -9,11 +9,11 @@ const experiences = [
     period: "2024 - Present",
     description: "Building customised Enterprise Mangagement systems, APIs, solutions for clients across various industries. Specializing in Node.js, Database and Server management",
     highlights: [
-      "Delivered projects that increases business efficiency",
-      "Collaborating/ working closely with clients to understand their needs, designers and developers to build customised and scalable solutions that wil solve clients problems",
-      "Working with SMEs to provide solutins to automate their processes processes that are repeated",
-      "Mentored junior developers"
-
+      "Delivered projects that increased business efficiency for clients",
+      "Worked closely with clients to understand their requirements and provide technical solutions",
+      "Collaborated with designers and developers to build customized and scalable solutions",
+      "Automated repetitive processes for SMEs to improve operational efficiency",
+      "Mentored junior developers and conducted code reviews"
     ]
   },
   {
@@ -96,11 +96,11 @@ const ExperienceSection = () => {
                     </div>
                     <p className="text-primary font-medium mb-3">{exp.company}</p>
                     <p className="text-muted-foreground text-base mb-4">{exp.description}</p>
-                    <ul className="space-y-1">
+                    <ul className="space-y-2">
                       {exp.highlights.map((highlight) => (
-                        <li key={highlight} className="text-base text-muted-foreground flex items-center gap-2">
-                          <span className="w-1.5 h-1.5 rounded-full bg-primary" />
-                          {highlight}
+                        <li key={highlight} className="text-base text-muted-foreground flex items-start gap-3">
+                          <span className="w-2 h-2 mt-2.5 flex-shrink-0 rounded-full bg-primary" />
+                          <span>{highlight}</span>
                         </li>
                       ))}
                     </ul>
@@ -145,7 +145,7 @@ const ExperienceSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.3 }}
-              className="mt-8 p-6 rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 border border-primary/20"
+              className="mt-8 p-6 rounded-2xl bg-gradient-to-br from-primary/10 to-accent/10 border border-primary/40"
             >
               <h4 className="text-lg font-bold text-foreground mb-4">Core Competencies</h4>
               <div className="flex flex-wrap gap-2">

@@ -12,6 +12,11 @@ const skillCategories = [
     skills: ["PostgreSQL", "MySQL", "MongoDB","Multi-Tenancy", "Redis", "Sequelize", "Database Design"]
   },
   {
+    title: "Web3",
+    color: "from-indigo-500 to-violet-500",
+    skills: ["Solidity", "Rust", "Smart Contracts", "Ethereum","Hedera", "DeFi", "NFTs"]
+  },
+  {
     title: "Frontend",
     color: "from-purple-500 to-pink-500",
     skills: ["React", "TailwindCSS", "Component Design", "Responsive UI", "State Management"]
@@ -22,14 +27,9 @@ const skillCategories = [
     skills: ["DigitalOcean", "Docker", "Nginx", "CI/CD", "GitHub Actions"]
   },
   {
-    title: "Web3",
-    color: "from-indigo-500 to-violet-500",
-    skills: ["Solidity", "Rust", "Smart Contracts", "Ethereum","Hedera", "DeFi", "NFTs"]
-  },
-  {
     title: "Tools",
     color: "from-rose-500 to-red-500",
-    skills: ["Git", "Supabase", "VS Code", "Postman", "Figma", "Jira"]
+    skills: ["Git", "Github", "Postman", "Figma", "Jira", "Trello"]
   }
 ];
 
