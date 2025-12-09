@@ -1,43 +1,72 @@
 import { motion } from 'framer-motion';
 import { ArrowRight, BookOpen, Calendar } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { useState, useEffect } from 'react';
 
-// Placeholder articles - in production, these would come from Medium RSS feed
-const articles = [
-  {
-    title: "Building Scalable APIs with FastAPI and PostgreSQL",
-    excerpt: "A deep dive into creating production-ready APIs with async Python, covering database optimization, caching strategies, and deployment best practices.",
-    date: "Dec 1, 2024",
-    readTime: "8 min read",
-    link: "#"
-  },
-  {
-    title: "Smart Contract Security: Common Vulnerabilities and How to Avoid Them",
-    excerpt: "Exploring the most critical security issues in Solidity development and implementing robust patterns to protect your decentralized applications.",
-    date: "Nov 15, 2024",
-    readTime: "12 min read",
-    link: "#"
-  },
-  {
-    title: "Microservices Architecture: Lessons Learned from Production",
-    excerpt: "Real-world insights from building and maintaining microservices at scale, including service communication, monitoring, and debugging strategies.",
-    date: "Nov 1, 2024",
-    readTime: "10 min read",
-    link: "#"
-  },
-  {
-    title: "From Node.js to Rust: A Backend Developer's Journey",
-    excerpt: "Comparing the development experience, performance characteristics, and use cases for Node.js and Rust in backend development.",
-    date: "Oct 20, 2024",
-    readTime: "15 min read",
-    link: "#"
-  }
-];
+interface MediumArticle {
+  title: string;
+  link: string;
+  pubDate: string;
+  content: string;
+  contentSnippet: string;
+  guid: string;
+  isoDate: string;
+}
+
+const MEDIUM_RSS_FEED = 'https://medium.com/feed/@caritaemelie';
+const RSS2JSON_API = 'https://api.rss2json.com/v1/api.json?rss_url=';
+
+const formatDate = (dateString: string) => {
+  const options: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'short', day: 'numeric' };
+  return new Date(dateString).toLocaleDateString('en-US', options);
+};
+
+const estimateReadTime = (text: string) => {
+  const wordsPerMinute = 200;
+  const words = text.trim().split(/\s+/).length;
+  const minutes = Math.ceil(words / wordsPerMinute);
+  return `${minutes} min read`;
+};
 
 const MediumSection = () => {
+  const [articles, setArticles] = useState<MediumArticle[]>([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const fetchMediumArticles = async () => {
+      try {
+        const response = await fetch(`${RSS2JSON_API}${encodeURIComponent(MEDIUM_RSS_FEED)}`);
+        if (!response.ok) throw new Error('Failed to fetch articles');
+
+        const data = await response.json();
+
+        const validItems: MediumArticle[] = data.items.map((item: any) => ({
+          title: item.title,
+          link: item.link,
+          pubDate: item.pubDate,
+          content: item.content,
+          contentSnippet: item.description,
+          guid: item.guid,
+          isoDate: item.pubDate,
+        }));
+
+        setArticles(validItems);
+      } catch (err) {
+        console.error('Error fetching Medium articles:', err);
+        setError('Failed to load articles. Please try again later.');
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchMediumArticles();
+  }, []);
+
   return (
     <section id="writing" className="py-24 bg-background">
       <div className="max-w-6xl mx-auto px-4">
+        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -55,68 +84,99 @@ const MediumSection = () => {
           <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full mt-6" />
         </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-6">
-          {articles.map((article, index) => (
-            <motion.a
-              key={article.title}
-              href={article.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group block"
+        {/* Content */}
+        {loading ? (
+          <div className="text-center py-12">
+            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto"></div>
+            <p className="mt-4 text-muted-foreground">Loading articles...</p>
+          </div>
+        ) : error ? (
+          <div className="text-center py-12">
+            <p className="text-destructive">{error}</p>
+            <Button
+              variant="outline"
+              className="mt-4"
+              onClick={() => window.location.reload()}
             >
-              <div className="h-full p-6 rounded-2xl bg-card border border-border hover:border-primary/30 transition-all duration-300 hover:shadow-xl hover:shadow-primary/5">
-                {/* Meta info */}
-                <div className="flex items-center gap-4 text-sm text-muted-foreground mb-4">
-                  <span className="flex items-center gap-1.5">
-                    <Calendar className="h-4 w-4" />
-                    {article.date}
-                  </span>
-                  <span className="flex items-center gap-1.5">
-                    <BookOpen className="h-4 w-4" />
-                    {article.readTime}
-                  </span>
-                </div>
-
-                {/* Title */}
-                <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors line-clamp-2">
-                  {article.title}
-                </h3>
-
-                {/* Excerpt */}
-                <p className="text-muted-foreground leading-relaxed line-clamp-3 mb-4">
-                  {article.excerpt}
-                </p>
-
-                {/* Read more */}
-                <div className="flex items-center text-primary font-medium">
-                  Read more
-                  <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-2 transition-transform" />
-                </div>
-              </div>
-            </motion.a>
-          ))}
-        </div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="text-center mt-12"
-        >
-          <a href={import.meta.env.VITE_MEDIUM_URL}target="_blank" rel="noopener noreferrer">
-            <Button size="lg" className="px-8">
-              <svg className="mr-2 h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M13.54 12a6.8 6.8 0 01-6.77 6.82A6.8 6.8 0 010 12a6.8 6.8 0 016.77-6.82A6.8 6.8 0 0113.54 12zM20.96 12c0 3.54-1.51 6.42-3.38 6.42-1.87 0-3.39-2.88-3.39-6.42s1.52-6.42 3.39-6.42 3.38 2.88 3.38 6.42M24 12c0 3.17-.53 5.75-1.19 5.75-.66 0-1.19-2.58-1.19-5.75s.53-5.75 1.19-5.75C23.47 6.25 24 8.83 24 12z"/>
-              </svg>
-              Read More on Medium
+              Retry
             </Button>
-          </a>
-        </motion.div>
+          </div>
+        ) : (
+          <>
+            {/* Articles Grid */}
+            <div className="grid md:grid-cols-2 gap-6">
+              {articles.slice(0, 4).map((article, index) => {
+                const content = article.content || article.contentSnippet || '';
+                const excerpt = article.contentSnippet || content.substring(0, 200) + '...';
+
+                return (
+                  <motion.a
+                    key={article.guid || article.link}
+                    href={article.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    className="group block h-full"
+                  >
+                    <div className="h-full p-6 rounded-2xl bg-card border border-border hover:border-primary/30 transition-all duration-300 hover:shadow-xl hover:shadow-primary/5 flex flex-col">
+                      {/* Meta info */}
+                      <div className="flex items-center gap-4 text-sm text-muted-foreground mb-4">
+                        <span className="flex items-center gap-1.5">
+                          <Calendar className="h-4 w-4" />
+                          {formatDate(article.pubDate)}
+                        </span>
+                        <span className="flex items-center gap-1.5">
+                          <BookOpen className="h-4 w-4" />
+                          {estimateReadTime(content)}
+                        </span>
+                      </div>
+
+                      {/* Title */}
+                      <h3 className="text-xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors line-clamp-2">
+                        {article.title}
+                      </h3>
+
+                      {/* Excerpt */}
+                      <p
+                        className="text-muted-foreground leading-relaxed line-clamp-3 mb-4 flex-grow"
+                        dangerouslySetInnerHTML={{ __html: excerpt }}
+                      />
+
+                      {/* Read more */}
+                      <div className="flex items-center text-primary font-medium mt-auto">
+                        Read on Medium
+                        <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-2 transition-transform" />
+                      </div>
+                    </div>
+                  </motion.a>
+                );
+              })}
+            </div>
+
+            {/* View All Button */}
+            {articles.length > 0 && (
+              <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                className="text-center mt-12"
+              >
+                <a href="https://medium.com/@caritaemelie" target="_blank" rel="noopener noreferrer">
+                  <Button size="lg" className="px-8">
+                    <svg className="mr-2 h-5 w-5" viewBox="0 0 24 24" fill="currentColor">
+                      <path d="M22.4 2.2H1.6a1.6 1.6 0 0 0-1.6 1.6v16.4a1.6 1.6 0 0 0 1.6 1.6h20.8a1.6 1.6 0 0 0 1.6-1.6V3.8a1.6 1.6 0 0 0-1.6-1.6zM7.2 17.6H3.2V9.6h4v8zm-2-9.2a2.4 2.4 0 1 1 0-4.8 2.4 2.4 0 0 1 0 4.8zm13.6 9.2h-4v-4.8c0-1.2 0-2.8-1.6-2.8s-1.8 1.2-1.8 2.8v4.8H9.6V9.6h4v1.4a3.6 3.6 0 0 1 3.2-1.8c3.2 0 3.6 2.4 3.6 4.8v4.8z" />
+                    </svg>
+                    View All Articles on Medium
+                  </Button>
+                </a>
+              </motion.div>
+            )}
+          </>
+        )}
       </div>
     </section>
   );
