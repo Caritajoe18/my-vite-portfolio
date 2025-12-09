@@ -51,27 +51,24 @@ const AboutSection = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              Iam a Software Developer developer with a passion for building robust, scalable applications.
+              I am a Software Developer developer passionate about building reliable, easy-to-maintain applications.
               My expertise spans from backend systems with <span className="text-primary font-semibold">Node.js</span>,
               <span className="text-primary font-semibold"> TypeScript</span>, and
               <span className="text-primary font-semibold"> FastAPI</span> to modern frontends with
               <span className="text-primary font-semibold"> React</span>.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              Beyond traditional web development, I venture into the
-              <span className="text-accent font-semibold"> Web3 space</span>, building smart contracts
-              and decentralized applications using Solidity and Rust. This unique combination allows
-              me to bridge conventional systems with blockchain technology.
+              Beyond traditional web development, I also work in the Web3 space, where I build smart contracts and decentralized applications using Solidity and Rust. This helps me connect traditional systems with blockchain technology in a practical and effective way.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-              My portfolio includes diverse projects: church management platforms, event systems,
-              SMS wallet integrations, supplier/customer ledger systems, batch-aware product sales,
-              image analysis APIs, and secure role-based applications. I approach each project with
-              a focus on clean architecture, performance, and maintainability.
+              Outside coding, I enjoy music and reading books. One of my favourites is
+              <span className="text-primary font-semibold"> The Perfect Planet </span>
+              by Edward Packard, #80 in the “Choose Your Own Adventure” series.
             </p>
 
+
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-6">
+            {/* <div className="grid grid-cols-3 gap-6">
               <motion.div
                 whileHover={{ scale: 1.05, y: -5 }}
                 className="text-center p-4 rounded-xl bg-gradient-to-br from-primary/10 to-primary/5 border border-primary/30 shadow-lg shadow-primary/10"
@@ -93,7 +90,7 @@ const AboutSection = () => {
                 <div className="text-3xl font-bold text-primary">{import.meta.env.VITE_HAPPY_CLIENTS || '10+'}</div>
                 <div className="text-sm text-muted-foreground font-medium">Happy Clients</div>
               </motion.div>
-            </div>
+            </div> */}
           </motion.div>
 
           {/* Highlight cards */}

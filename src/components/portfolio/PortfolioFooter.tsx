@@ -10,7 +10,7 @@ const PortfolioFooter = () => {
           {/* Logo & tagline */}
           <div className="text-center md:text-left">
             <a href="#" className="text-2xl font-bold">
-              <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              <span className="text-primary">
                 {'<Carita />'}
               </span>
             </a>

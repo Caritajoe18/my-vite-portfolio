@@ -6,80 +6,107 @@
 
 @layer base {
   :root {
-    /* Light theme - Clean & Professional */
+    /* Simplified color scheme */
     --background: 0 0% 100%;
-    --foreground: 222 47% 11%;
+    /* White background */
+    --foreground: 17 24% 14%;
+    /* Dark gray for header text */
 
-    --card: 220 14% 96%;
-    --card-foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    /* White cards */
+    --card-foreground: 17 24% 14%;
+    /* Dark gray for card text */
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
+    /* White popovers */
+    --popover-foreground: 17 24% 14%;
+    /* Dark gray for popover text */
 
-    --primary: 217 91% 50%;
+    --primary: 222 47% 11%;
+    /* #111827 for header text and buttons */
     --primary-foreground: 0 0% 100%;
+    /* White text inside buttons */
 
-    --secondary: 220 14% 96%;
+    --secondary: 0 0% 100%;
+    /* White secondary elements */
     --secondary-foreground: 222 47% 11%;
+    /* Dark gray for secondary text */
 
-    --muted: 220 14% 96%;
-    --muted-foreground: 220 13% 35%;
+    --muted: 0 0% 98%;
+    /* Slightly off-white for muted elements */
+    --muted-foreground: 220 9% 46%;
+    /* #4B5563 for paragraphs */
 
-    --accent: 280 67% 60%;
+    --accent: 0 0% 100%;
+    /* White accent */
     --accent-foreground: 0 0% 100%;
+    /* White accent text */
 
-    --destructive: 0 84% 60%;
+    --destructive: 0 0% 100%;
+    /* White destructive */
     --destructive-foreground: 0 0% 100%;
+    /* White destructive text */
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 217 91% 50%;
+    --border: 0 0% 90%;
+    /* Light gray border */
+    --input: 0 0% 90%;
+    /* Light gray input */
+    --ring: 0 0% 80%;
+    /* Light gray ring */
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
-    /* Custom tokens */
-    --gradient-primary: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
-    --shadow-glow: 0 0 40px hsl(var(--primary) / 0.2);
-    --shadow-card: 0 4px 20px hsl(222 47% 11% / 0.08);
+    /* Simplified custom tokens */
+    --gradient-primary: none;
+    --shadow-glow: none;
+    --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.1);
 
-    --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 222 47% 11%;
-    --sidebar-primary: 199 89% 48%;
+    --sidebar-background: 0 0% 100%;
+    /* White sidebar */
+    --sidebar-foreground: 17 24% 14%;
+    /* Dark gray sidebar text */
+    --sidebar-primary: 222 47% 11%;
+    /* #111827 for sidebar primary */
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 220 14% 96%;
-    --sidebar-accent-foreground: 222 47% 11%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 199 89% 48%;
+    /* White sidebar primary text */
+    --sidebar-accent: 0 0% 100%;
+    /* White sidebar accent */
+    --sidebar-accent-foreground: 17 24% 14%;
+    /* Dark gray sidebar accent text */
+    --sidebar-border: 0 0% 90%;
+    /* Light gray sidebar border */
+    --sidebar-ring: 0 0% 80%;
+    /* Light gray sidebar ring */
   }
 
   .dark {
-    --background: 222 47% 6%;
-    --foreground: 210 40% 98%;
+    --background: 0 0% 100%;
+    --foreground: 17 24% 14%;
 
-    --card: 222 47% 9%;
-    --card-foreground: 210 40% 98%;
+    --card: 0 0% 100%;
+    --card-foreground: 17 24% 14%;
 
-    --popover: 222 47% 9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 17 24% 14%;
 
-    --primary: 199 89% 48%;
-    --primary-foreground: 222 47% 6%;
+    --primary: 222 47% 11%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 217 33% 17%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 0 0% 100%;
+    --secondary-foreground: 17 24% 14%;
 
-    --muted: 217 33% 17%;
-    --muted-foreground: 215 20% 65%;
+    --muted: 0 0% 98%;
+    --muted-foreground: 75 5% 40%;
 
-    --accent: 280 67% 60%;
-    --accent-foreground: 210 40% 98%;
+    --accent: 0 0% 100%;
+    --accent-foreground: 0 0% 100%;
 
-    --destructive: 0 84% 60%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 0% 100%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 217 33% 17%;
-    --input: 217 33% 17%;
-    --ring: 199 89% 48%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 0 0% 80%;
   }
 }
 
@@ -89,10 +116,23 @@
   }
 
   body {
-    @apply bg-background text-foreground antialiased text-lg md:text-xl;
+    @apply bg-background text-foreground antialiased;
     font-family: 'Lato', sans-serif;
     font-weight: 600;
     line-height: 1.6;
+  }
+
+  /* Set paragraph text to 20px */
+  p {
+    font-size: 20px;
+    line-height: 1.6;
+    color: hsla(0, 0%, 37%, 0.881);
+  }
+
+  /* Set button text to 16px */
+  button,
+  .btn {
+    font-size: 16px !important;
   }
 
   h1,

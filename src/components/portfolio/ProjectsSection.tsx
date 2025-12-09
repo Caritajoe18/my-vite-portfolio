@@ -1,72 +1,74 @@
 import { motion } from 'framer-motion';
-import { ExternalLink, Github, Server, Wallet, Image, ShoppingCart, Vote, FileSearch, Blocks } from 'lucide-react';
+import { ExternalLink, Github, Image, ShoppingCart, Vote, FileSearch, Blocks, Church, Shield, Box } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 const projects = [
   {
-    title: "ChurchSuite Platform",
+    title: "ChurchSet",
     description: "A comprehensive church management system with member tracking, event scheduling, donation management, and communication tools. Built with role-based access control and real-time updates.",
-    tech: ["Node.js", "TypeScript", "React", "PostgreSQL", "Supabase"],
-    icon: Server,
+    tech: ["Node.js", "TypeScript", "PostgreSQL", "Multi-Tenancy", "Redis", "Sequelize", "Database Design"],
+    icon: Church,
     color: "from-blue-500 to-cyan-500",
-    links: { github: "#", live: "#" }
+    links: { live: "https://churchset.com/" }
   },
   {
-    title: "SMS Wallet System",
-    description: "Integrated wallet system with Flutterwave payment processing and Termii SMS notifications. Features automated balance alerts, transaction history, and secure fund transfers.",
-    tech: ["FastAPI", "Python", "Flutterwave", "Termii", "Redis"],
-    icon: Wallet,
+    title: "Talk Safe",
+    description:
+      "A platform built for the international women’s movement to raise awareness about femicide and sexual violence against women. It provides a safe space where anyone can anonymously report abuse and seek support.",
+    tech: ["MongoDB", "Nodejs", "React", "Teamwork"],
+
+    icon: Shield,
     color: "from-green-500 to-emerald-500",
-    links: { github: "#", live: "#" }
+    links: { github: "https://talk-safe-app.vercel.app/", live: "https://talk-safe-app.vercel.app/" }
   },
   {
-    title: "Image Analysis API",
-    description: "RESTful API for image processing and analysis, featuring object detection, metadata extraction, and batch processing capabilities. Optimized for high throughput.",
-    tech: ["FastAPI", "Python", "OpenCV", "Docker", "AWS S3"],
-    icon: Image,
+    title: "Drop It",
+    description: "A decentralized app where verified individuals complete physical tasks (deliveries, errands, etc.) for others — powered by blockchain verification, escrow payments, and on-chain reputation.",
+    tech: ["Ethereum", "Rust", "Foundry", "Nodejs", "React", "TailwindCSS"],
+    icon: Box,
     color: "from-purple-500 to-pink-500",
-    links: { github: "#", live: "#" }
+    links: { github: "https://github.com/Caritajoe18/WIBA-final-Project", live: "https://dropit-seven.vercel.app/" }
   },
   {
-    title: "Supplier Ledger System",
-    description: "Complete supplier and customer ledger with batch-aware product sales, inventory tracking, and financial reporting. Supports multi-currency transactions.",
-    tech: ["Node.js", "Express", "MySQL", "React", "Chart.js"],
+    title: "Lovtiti Agro Mart",
+    description: "A decentralized marketplace that connects farmers directly to buyers using Hedera blockchain technology",
+    tech: ["Node.js", "Express", "PostgreSQL", "Nextjs", "Hedera", "Solidity", "TypeScript"],
     icon: ShoppingCart,
     color: "from-orange-500 to-amber-500",
-    links: { github: "#", live: "#" }
+    links: { github: "https://github.com/mgatogoh/lovtiti-agro-Hedera-ecommerce", live: "https://lovtiti-agro-hedera-ecommerce.vercel.app/" }
   },
-  {
-    title: "Ranked-Choice Voting",
-    description: "Secure voting system implementing ranked-choice algorithm in C. Features vote validation, real-time tallying, and audit logging for transparency.",
-    tech: ["C", "Algorithms", "Data Structures", "Security"],
-    icon: Vote,
-    color: "from-rose-500 to-red-500",
-    links: { github: "#" }
-  },
-  {
-    title: "Metadata Extractor",
-    description: "FastAPI-based service for extracting and analyzing file metadata. Supports various file formats with structured JSON output and batch processing.",
-    tech: ["FastAPI", "Python", "Docker", "REST API"],
-    icon: FileSearch,
-    color: "from-teal-500 to-cyan-500",
-    links: { github: "#", live: "#" }
-  },
-  {
-    title: "DeFi Smart Contracts",
-    description: "Suite of smart contracts for decentralized finance applications including token swaps, staking pools, and yield farming mechanisms.",
-    tech: ["Solidity", "Ethereum", "Hardhat", "Web3.js"],
-    icon: Blocks,
-    color: "from-indigo-500 to-violet-500",
-    links: { github: "#" }
-  },
-  {
-    title: "NFT Marketplace",
-    description: "Rust-based smart contracts for NFT minting, trading, and royalty distribution. Includes auction functionality and collection management.",
-    tech: ["Rust", "Solana", "Anchor", "React"],
-    icon: Blocks,
-    color: "from-fuchsia-500 to-purple-500",
-    links: { github: "#", live: "#" }
-  }
+  // {
+  //   title: "Ranked-Choice Voting",
+  //   description: "Secure voting system implementing ranked-choice algorithm in C. Features vote validation, real-time tallying, and audit logging for transparency.",
+  //   tech: ["C", "Algorithms", "Data Structures", "Security"],
+  //   icon: Vote,
+  //   color: "from-rose-500 to-red-500",
+  //   links: { github: "#" }
+  // },
+  //   {
+  //     title: "Metadata Extractor",
+  //     description: "FastAPI-based service for extracting and analyzing file metadata. Supports various file formats with structured JSON output and batch processing.",
+  //     tech: ["FastAPI", "Python", "Docker", "REST API"],
+  //     icon: FileSearch,
+  //     color: "from-teal-500 to-cyan-500",
+  //     links: { github: "#", live: "#" }
+  //   },
+  //   {
+  //     title: "DeFi Smart Contracts",
+  //     description: "Suite of smart contracts for decentralized finance applications including token swaps, staking pools, and yield farming mechanisms.",
+  //     tech: ["Solidity", "Ethereum", "Hardhat", "Web3.js"],
+  //     icon: Blocks,
+  //     color: "from-indigo-500 to-violet-500",
+  //     links: { github: "#" }
+  //   },
+  //   {
+  //     title: "NFT Marketplace",
+  //     description: "Rust-based smart contracts for NFT minting, trading, and royalty distribution. Includes auction functionality and collection management.",
+  //     tech: ["Rust", "Solana", "Anchor", "React"],
+  //     icon: Blocks,
+  //     color: "from-fuchsia-500 to-purple-500",
+  //     links: { github: "#", live: "#" }
+  //   }
 ];
 
 const ProjectsSection = () => {
@@ -158,10 +160,17 @@ const ProjectsSection = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="text-center mt-12"
         >
-          <Button variant="outline" size="lg" className="px-8">
-            <Github className="mr-2 h-5 w-5" />
-            View All Projects on GitHub
-          </Button>
+          <a
+            href={import.meta.env.VITE_GITHUB_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <Button variant="outline" size="lg" className="px-8">
+              <Github className="mr-2 h-5 w-5" />
+              View All Projects on GitHub
+            </Button>
+          </a>
+
         </motion.div>
       </div>
     </section>

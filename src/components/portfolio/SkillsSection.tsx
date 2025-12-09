@@ -7,24 +7,24 @@ const skillCategories = [
     skills: ["Node.js", "Express", "FastAPI", "TypeScript", "REST APIs", "Microservices", "Python"]
   },
   {
+    title: "Databases",
+    color: "from-green-500 to-emerald-500",
+    skills: ["PostgreSQL", "MySQL", "MongoDB","Multi-Tenancy", "Redis", "Sequelize", "Database Design"]
+  },
+  {
     title: "Frontend",
     color: "from-purple-500 to-pink-500",
     skills: ["React", "TailwindCSS", "Component Design", "Responsive UI", "State Management"]
   },
   {
-    title: "Databases",
-    color: "from-green-500 to-emerald-500",
-    skills: ["PostgreSQL", "MySQL", "Redis", "Prisma", "Sequelize", "Database Design"]
-  },
-  {
     title: "Cloud & DevOps",
     color: "from-orange-500 to-amber-500",
-    skills: ["DigitalOcean", "Docker", "Nginx", "CI/CD", "GitHub Actions", "Linux"]
+    skills: ["DigitalOcean", "Docker", "Nginx", "CI/CD", "GitHub Actions"]
   },
   {
     title: "Web3",
     color: "from-indigo-500 to-violet-500",
-    skills: ["Solidity", "Rust", "Smart Contracts", "Ethereum", "DeFi", "NFTs"]
+    skills: ["Solidity", "Rust", "Smart Contracts", "Ethereum","Hedera", "DeFi", "NFTs"]
   },
   {
     title: "Tools",
@@ -97,7 +97,7 @@ const SkillsSection = () => {
         >
           <p className="text-center text-muted-foreground mb-4">Also experienced with</p>
           <div className="flex flex-wrap justify-center gap-4">
-            {["GraphQL", "WebSockets", "Jest", "Stripe API", "Flutterwave", "Termii", "AWS S3", "Cloudflare"].map((tool) => (
+            {["GraphQL", "WebSockets", "Jest", "Stripe API", "Flutterwave", "Termii", "AWS S3", "Shared Hosting services"].map((tool) => (
               <span
                 key={tool}
                 className="px-4 py-2 text-sm font-medium rounded-full border border-border text-muted-foreground hover:border-primary hover:text-primary transition-colors duration-200"

@@ -4,22 +4,24 @@ import { Briefcase, Award, Rocket } from 'lucide-react';
 const experiences = [
   {
     type: "role",
-    title: "Full-Stack Developer",
-    company: "Freelance / Contract",
-    period: "2020 - Present",
-    description: "Building custom web applications, APIs, and blockchain solutions for clients across various industries. Specializing in Node.js, React, and Web3 technologies.",
+    title: "Backend Engineer",
+    company: "RAD5 Tech Hub",
+    period: "2024 - Present",
+    description: "Building customised Enterprise Mangagement systems, APIs, solutions for clients across various industries. Specializing in Node.js, Database and Server management",
     highlights: [
-      "Delivered 20+ successful projects",
-      "Built systems handling 100k+ users",
-      "Integrated multiple payment gateways"
+      "Delivered projects that increases business efficiency",
+      "Collaborating/ working closely with clients to understand their needs, designers and developers to build customised and scalable solutions that wil solve clients problems",
+      "Working with SMEs to provide solutins to automate their processes processes that are repeated",
+      "Mentored junior developers"
+
     ]
   },
   {
     type: "role",
-    title: "Backend Engineer",
-    company: "Previous Company",
-    period: "2018 - 2020",
-    description: "Developed and maintained microservices architecture for high-traffic applications. Led database optimization initiatives and implemented CI/CD pipelines.",
+    title: "Associate Software Developer",
+    company: "Decagon Institute",
+    period: "2023 - 2024",
+    description: "End to end developement of applications, from designing, to API to deployment",
     highlights: [
       "Reduced API response times by 60%",
       "Implemented automated testing",
@@ -29,15 +31,15 @@ const experiences = [
 ];
 
 const achievements = [
-  {
-    icon: Award,
-    title: "Smart Contract Audits",
-    description: "Conducted security audits for DeFi protocols with combined TVL of $5M+"
-  },
+  // {
+  //   icon: Award,
+  //   title: "Smart Contract Audits",
+  //   description: "Conducted security audits for DeFi protocols with combined TVL of $5M+"
+  // },
   {
     icon: Rocket,
     title: "System Design",
-    description: "Architected scalable solutions handling millions of requests daily"
+    description: "Architected scalable solutions that can handle millions of requests daily"
   },
   {
     icon: Briefcase,

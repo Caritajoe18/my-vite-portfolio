@@ -46,11 +46,11 @@ const ContactSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <span className="text-primary font-mono text-sm tracking-wider uppercase">Get in Touch</span>
+          <span className="text-primary font-mono text-base tracking-wider uppercase">Get in Touch</span>
           <h2 className="text-4xl md:text-5xl font-bold mt-4 mb-6 text-foreground">
             Let's Work Together
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="max-w-2xl mx-auto" style={{ fontSize: '20px', lineHeight: '1.6' }}>
             Have a project in mind? I would love to hear about it. Send me a message and let's create something amazing together.
           </p>
           <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto rounded-full mt-6" />
@@ -71,8 +71,8 @@ const ContactSection = () => {
                 <Mail className="h-5 w-5 text-primary" />
               </div>
               <div>
-                <h3 className="font-semibold text-foreground mb-1">Email</h3>
-                <a  href={`mailto:${import.meta.env.VITE_EMAIL}`} className="text-muted-foreground hover:text-primary transition-colors">
+                <h3 className="font-semibold text-foreground mb-1" style={{ fontSize: '16px' }}>Email</h3>
+                <a href={`mailto:${import.meta.env.VITE_EMAIL}`} className="hover:text-primary transition-colors" style={{ fontSize: '20px', lineHeight: '1.6' }}>
                   caritaemelie@gmail.com
                 </a>
               </div>
@@ -84,8 +84,8 @@ const ContactSection = () => {
                 <MapPin className="h-5 w-5 text-primary" />
               </div>
               <div>
-                <h3 className="font-semibold text-foreground mb-1">Location</h3>
-                <p className="text-muted-foreground">Remote / Worldwide</p>
+                <h3 className="font-semibold text-foreground mb-1" style={{ fontSize: '16px' }}>Location</h3>
+                <p style={{ fontSize: '20px', lineHeight: '1.6' }}>Remote / Worldwide</p>
               </div>
             </div>
 
@@ -95,8 +95,8 @@ const ContactSection = () => {
                 <Clock className="h-5 w-5 text-primary" />
               </div>
               <div>
-                <h3 className="font-semibold text-foreground mb-1">Availability</h3>
-                <p className="text-muted-foreground">Open for new projects</p>
+                <h3 className="font-semibold text-foreground mb-1" style={{ fontSize: '16px' }}>Availability</h3>
+                <p style={{ fontSize: '20px', lineHeight: '1.6' }}>Open for new projects</p>
               </div>
             </div>
 
@@ -153,7 +153,7 @@ const ContactSection = () => {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    placeholder="John Doe"
+                    // placeholder="John Doe"
                     required
                     className="bg-card"
                   />
@@ -168,7 +168,7 @@ const ContactSection = () => {
                     type="email"
                     value={formData.email}
                     onChange={handleChange}
-                    placeholder="john@example.com"
+                    // placeholder="john@example.com"
                     required
                     className="bg-card"
                   />
@@ -184,7 +184,7 @@ const ContactSection = () => {
                   name="subject"
                   value={formData.subject}
                   onChange={handleChange}
-                  placeholder="Project inquiry"
+                  // placeholder="Project inquiry"
                   required
                   className="bg-card"
                 />
@@ -199,7 +199,7 @@ const ContactSection = () => {
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
-                  placeholder="Tell me about your project..."
+                  // placeholder="Tell me about your project..."
                   rows={5}
                   required
                   className="bg-card resize-none"
@@ -208,8 +208,8 @@ const ContactSection = () => {
 
               <Button
                 type="submit"
-                size="lg"
-                className="w-full"
+                className="w-full md:w-auto px-8 py-6 font-medium rounded-xl transition-all duration-300 transform hover:scale-105"
+                style={{ fontSize: '16px' }}
                 disabled={isSubmitting}
               >
                 {isSubmitting ? (
