@@ -61,9 +61,9 @@ const AboutSection = () => {
               Beyond traditional web development, I also work in the Web3 space, where I build smart contracts and decentralized applications using Solidity and Rust. This helps me connect traditional systems with blockchain technology in a practical and effective way.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
-              Outside coding, I enjoy music and reading books. One of my favourites is
+              Outside coding, I enjoy music and reading books. One of my favourite books is
               <span className="text-primary font-semibold"> The Perfect Planet </span>
-              by Edward Packard, #80 in the “Choose Your Own Adventure” series.
+              by Edward Packard, the 80th book in the “Choose Your Own Adventure” series.
             </p>
 
 
