@@ -27,7 +27,7 @@ User-agent: Bingbot
 Allow: /
 
 # Sitemap
-Sitemap: https://contentlab.live/sitemap.xml
+Sitemap: https://chiemelie-carita-94bbw.ondigitalocean.app/sitemap.xml
 
 # Disallow admin or sensitive areas (add as needed)
 # Disallow: /admin/
