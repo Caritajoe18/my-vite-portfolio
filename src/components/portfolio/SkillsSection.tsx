@@ -19,7 +19,7 @@ const skillCategories = [
   {
     title: "Frontend",
     color: "from-purple-500 to-pink-500",
-    skills: ["React", "TailwindCSS", "Component Design", "Responsive UI", "State Management"]
+    skills: ["React.js", "Next.js", "TailwindCSS", "Component Design", "Responsive UI", "State Management"]
   },
   {
     title: "Cloud & DevOps",

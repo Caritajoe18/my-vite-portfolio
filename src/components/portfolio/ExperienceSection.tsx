@@ -23,9 +23,11 @@ const experiences = [
     period: "2023 - 2024",
     description: "End to end developement of applications, from designing, to API to deployment",
     highlights: [
+      "Built responsive, user-friendly frontend interfaces using modern frameworks",
       "Reduced API response times by 60%",
-      "Implemented automated testing",
-      "Mentored junior developers"
+      "Integrated frontend with scalable backend services",
+      "Implemented automated testing across the stack",
+      "Collaborated cross-functionally with designers, product managers, and engineers to deliver features"
     ]
   }
 ];

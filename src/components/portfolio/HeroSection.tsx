@@ -78,7 +78,7 @@ const HeroSection = () => {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.3 }}
             >
-              Backend Developer • Web3 Engineer
+              Software Developer • Web3 Engineer
             </motion.p>
 
             {/* Description */}

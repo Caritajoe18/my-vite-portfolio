@@ -55,10 +55,11 @@ const AboutSection = () => {
               My expertise spans from backend systems with <span className="text-primary font-semibold">Node.js</span>,
               <span className="text-primary font-semibold"> TypeScript</span>, and
               <span className="text-primary font-semibold"> FastAPI</span> to modern frontends with
-              <span className="text-primary font-semibold"> React</span>.
+              <span className="text-primary font-semibold"> React.js</span> and
+              <span className="text-primary font-semibold"> Next.js</span>
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              Beyond traditional web development, I also work in the Web3 space, where I build smart contracts and decentralized applications using Solidity and Rust. This helps me connect traditional systems with blockchain technology in a practical and effective way.
+              Beyond traditional web development, I also work in the Web3 space, where I build smart contracts and decentralized applications using <span className="text-primary font-semibold">Solidity</span> and <span className="text-primary font-semibold"> Rust</span>. This helps me connect traditional systems with blockchain technology in a practical and effective way.
             </p>
             <p className="text-lg text-muted-foreground leading-relaxed mb-8">
               Outside coding, I enjoy music and reading books. One of my favourite books is
